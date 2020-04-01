@@ -1,55 +1,48 @@
 #include <stdio.h>
 
-int main(void) {
+void main() {
+
+	int i, j, key, temp,r;
+	int num[10];
 
 
-    int num[10];
-    int i,temp,j,k;
+	//·£´ı°ª 
+	printf("·£´ı°ª Ãâ·Â\n");
+	for (i = 0; i < 10; i++) {
+
+		num[i] = rand() % 20;
+		
+		printf("%d ", num[i]);
+
+	}
 
 
-    printf("ì„ íƒ ì •ë ¬ ì „ ëœë¤ í•¨ìˆ˜ \n");
 
-    for (i = 0; i < 10; i++) {
+	//ÃÖ¼Ò°ªÃ£±â
 
-        k = rand() % 10; //0~9
-        num[i] = k;
-        printf("%d ",num[i]);
-     
-    }
-    
-    printf("\n");
+	for (int i = 0; i < 9; i++) {
+		int min = i;
 
-    for (j = 0; j < 10; j++) {
+		for (int j = i + 1; j < 10; j++) {
 
+			if (num[min] > num[j]) {
+				min = j;
+			}
 
-        
-        for (i = 0; i < 9; i++) {
+		}
 
-            if (num[i] > num[i + 1]) { //ì•ì˜ ìˆ«ìê°€ ë’¤ì˜ ìˆ«ìë³´ë‹¤ í¬ë©´ ë’¤ë¡œ 1ì¹¸ ë³´ë‚¸ë‹¤
+		temp = num[i];
+		num[i] = num[min];
+		num[min] = temp;
 
-                temp = num[i];
-                num[i] = num[i + 1];
-                num[i + 1] = temp;
+	}
+	
 
-               
-            }
+	printf("Á¤·Ä ÈÄ °ª\n");
+	for (int i = 0; i < 9; i++) {
 
-        }
-
-
-    }
-
-    printf("\n===========================\n");
-
-    printf("ì„ íƒ ì •ë ¬ í›„ ê°’ì€ \n");
-
-    for (i = 0; i < 10; i++) {
-        
-        printf("%d ",num[i]);
-
-    }
-
-
+		printf("%d", num[i]);
+	}
 
 
 }
